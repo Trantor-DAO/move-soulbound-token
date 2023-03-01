@@ -1,0 +1,13 @@
+[package]
+name = "SuiSoulboundToken"
+version = "0.1.1"
+
+[dependencies]
+#Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework", rev = "devnet-0.20.0" }
+#sui-capybaras = { git = "https://github.com/MystenLabs/sui.git", subdir = "sui_programmability/examples/capy", rev = "devnet-0.20.0" }
+
+Sui = { local = "../../../sui-releated/sui/crates/sui-framework" }
+#OriginByte = { local = "../../../sui-releated/nft-protocol" }
+
+[addresses]
+sbt = "0x0"
