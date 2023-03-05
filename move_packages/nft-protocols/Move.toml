@@ -1,6 +1,6 @@
 [package]
-name = "SuiSoulboundToken"
-version = "0.1.1"
+name = "NftProtocol"
+version = "0.25.0"
 
 [dependencies.Sui]
 git = "https://github.com/MystenLabs/sui.git"
@@ -14,6 +14,4 @@ git = "https://github.com/Origin-Byte/originmate.git"
 rev = "ef4e6b505f3fb1546944b770c78091b1ac47e392"
 
 [addresses]
-sbt = "0x0"
-nfts = "0x0"
-#nft_protocol="0x0"
+nft_protocol = "0x0"

@@ -1,0 +1,12 @@
+[package]
+name = "NFTs"
+version = "0.0.1"
+
+[dependencies.Sui]
+git = "https://github.com/MystenLabs/sui.git"
+subdir = "crates/sui-framework"
+# devnet-0.27.0
+rev = "598f106ef5fbdfbe1b644236f0caf46c94f4d1b7"
+
+[addresses]
+nfts = "0x0"

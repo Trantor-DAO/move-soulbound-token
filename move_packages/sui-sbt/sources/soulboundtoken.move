@@ -9,7 +9,6 @@ module sbt::soulboundtoken {
     #[test_only]
     use sui::test_scenario;
 
-    // errors
     const ESENDER_NOT_AUTHORIZED_TO_CLAIM: u64 = 0;
     const EMEDAL_MAX_AMOUNT_REACHED: u64 = 1;
     const EALREADY_CLAIMED: u64 = 2;
@@ -30,7 +29,7 @@ module sbt::soulboundtoken {
         creator: address,
     }
 
-    struct SoulboundTokenSchema has key, store {
+    struct SoulboundTokenSchema has key {
         id: UID,
         name: String,
         description: String,
@@ -134,7 +133,6 @@ module sbt::soulboundtoken {
             url: medal.url,
         };
         transfer::transfer(personal_medal, sender);
-        // transfer::freeze_object(personal_medal);
     }
 
     #[test]
