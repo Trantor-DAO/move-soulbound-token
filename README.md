@@ -17,15 +17,8 @@ To install this smart contract, follow these steps:
 1. Clone the repository to your local machine.
 2. Compile the contract `sui move build`
 3. Test the contract `sui move test`
-4. 
+4. To publish the Move package, navigate to the project directory and execute `./bin/publish.sh`
 
-### Functionality
-
-This contract supports the following functions:
-
-- `mint(metadata: vector<u8>)`: creates a new SoulboundTokenNFT and assigns it a unique ID.
-- `transfer(id: u64, new_owner: address)`: transfers ownership of an existing SoulboundTokenNFT to a new owner.
-- `soulbind(id: u64, to: address)`: sets the soulbound owner of an existing SoulboundTokenNFT to a specific address.
 
 ### Example Usage
 
