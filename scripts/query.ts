@@ -12,8 +12,6 @@ if (isDevNet) {
 const keypair_ed25519 = Ed25519Keypair.deriveKeypair(TEST_MNEMONICS, "m/44'/784'/0'/0'/0'");
 const signer = new RawSigner( keypair_ed25519, provider );
 
-const gasBudget = 100000;
-
 interface PackageInfo {
 	packageId: string,
 	objectId: string,
@@ -22,10 +20,12 @@ interface PackageInfo {
 const moduleName = process.env.MODULE_NAME || 'soulboundtoken2'
 
 async function queries(packageObjectId: string, collectionId: string, userAddr: string) {
-	console.log({ packageObjectId, collectionId, userAddr })
 	const medalStore = await provider.getObject(collectionId);
-	// console.log(`medalStore: ${JSON.stringify(medalStore, null, 2)}`);
-	const medalsTableID = (medalStore as any).details.data.fields.owners.fields.id.id;
+	const medalsTableID = (medalStore as any).details.data?.fields.owners.fields.id.id;
+	if (!medalsTableID) {
+		return
+	}
+
 	const medals = await provider.getObjectsOwnedByObject(medalsTableID);
 	// console.log(`medals: ${JSON.stringify(medals, null, 2)}`);
 	// query medal details, this data can be cached by frontend
@@ -58,10 +58,6 @@ async function main() {
   console.log('----- test query NFT -----');
   const addr = await signer.getAddress();
   console.log(`address: 0x${addr}`);
-  if (isDevNet) {
-    // const res = await provider.requestSuiFromFaucet(addr);
-    // console.log('requestSuiFromFaucet', JSON.stringify(res, null, 2));
-  }
 
 	const publishResult: PackageInfo = {
 		"packageId": "0xb071f5bb4166ee064891f0226f1740777d07529d",

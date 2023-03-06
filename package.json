@@ -1,13 +1,9 @@
 {
   "name": "trantor-sui",
   "version": "1.0.0",
-  "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "startLocalNode": "sh shell/startLocalNode.sh",
-    "demo": "ts-node scripts/demo.ts",
     "execute:query": "ts-node scripts/query.ts",
-    "execute:publish": "ts-node scripts/publish.ts",
     "execute:createCollection": "ts-node scripts/createCollection.ts",
     "execute:claim": "ts-node scripts/claim.ts",
     "build": "cd move_packages/sui-sbt && sui move build",

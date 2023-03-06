@@ -1,3 +1,4 @@
 move_packages/sui-sbt/build
 move_packages/nft-protocols/build
 move_packages/nfts/build
+.env

@@ -29,12 +29,8 @@ Here's an example of how to use this smart contract:
 3. To add a user's address to the whitelist during collection creation, you can pass the address as an argument when creating the collection. To claim a Soulbound Token NFT as a whitelisted user, you can call the `claim_soulbound_token` method to claim.
 
 
-Contributing
+### Contributing
 We welcome contributions to this project. To contribute, please fork the repository, make your changes, and submit a pull request.
 
 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Acknowledgments
-The Move programming language and the SUI ecosystem.
-The Move language documentation.
+This project is licensed under the MIT License
